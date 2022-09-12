@@ -10,3 +10,9 @@ Tools used
 
 - **composer install**
 - **php artisan test**
+
+
+### Added the new class to App\User
+
+- test added as CurrencyTest
+- **php artisan test**
