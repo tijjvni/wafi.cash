@@ -30,18 +30,18 @@ class CurrencyTest extends TestCase
 
     }
 
-    // public function test_user_can_transfer_ngn(){
-    //     $user = new User;
-    //     $userB = new User;
-    //     $wallet = $user->getWallet();
+    public function test_user_can_transfer_ngn(){
+        $user = new User;
+        $userB = new User;
+        $wallet = $user->getWallet();
 
-    //     $userB = new User;
-    //     $user->setBalance('NGN',500);
-    //     $user->transfer('NGN',250,$userB);
+        $userB = new User;
+        $user->setBalance('NGN',500);
+        $user->transfer('NGN',250,$userB);
 
-    //     $this->assertEquals($user->getBalance('NGN'),250);
+        $this->assertEquals($user->getBalance('NGN'),250);
 
-    // }
+    }
 
     public function test_user_cannot_transfer_insufficient_usd_from_ngn(){
         $user = new User;
