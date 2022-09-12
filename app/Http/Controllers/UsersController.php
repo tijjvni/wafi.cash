@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Currency;
 use App\Models\Transaction;
 
 use App\Http\Requests\DepositMoneyRequest;
@@ -130,4 +131,14 @@ class UsersController extends Controller
 
 
     }
+
+    public function getCurrencies()
+    {
+        return response()->json([
+            "message" => "Retreiving all currencies.",
+            "data" => Currency::all()
+        ]
+        ,200);
+    }
+
 }

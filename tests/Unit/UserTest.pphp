@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\User;
+use App\Models\Currency;
 
 class UserTest extends TestCase
 {
@@ -16,15 +17,17 @@ class UserTest extends TestCase
     public function test_can_create_user()
     {
 
-
+        $this->test_can_add_currencies();
         $user = User::factory()->create();
         $this->actingAs($user);
 
         $this->assertAuthenticated();
     }
 
+
     public function test_user_can_check_balance()
     {
+        // $this->test_can_add_currencies();
         $user = User::factory()->create();
         $this->actingAs($user);
 
@@ -164,6 +167,7 @@ class UserTest extends TestCase
             "message" => "Transfer out was successful."
         ]);
     }
+
 
     public function test_example_run_through_of_the_app(){
 

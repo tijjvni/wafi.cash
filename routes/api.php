@@ -14,3 +14,7 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::post('/transferOut', [UsersController::class, 'transferMoneyOut'])->name('users.transferMoneyOut');
 
 });
+
+
+Route::get('/currencies', [UsersController::class, 'getCurrencies'])->name('users.getCurrencies');
+
